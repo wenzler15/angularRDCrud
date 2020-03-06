@@ -13,13 +13,24 @@ export class ListaDeProdutosComponent implements OnInit {
 
   @Input() grupoAtivo: Grupo;
   public produtos: Produtos[] = [];
+  public produtosExibidos: Produtos[] =[];
   constructor(private http: HttpService) {
 
     this.http.getProdutos().subscribe(
-      (data) => { this.produtos = data; }
+      (data) => { 
+        this.produtos = data; 
+        this.produtosExibidos = data;
+      }
     );
 
   }
+
+
+  listaDoGrupo(codDoGrupo:number){
+    this.produtosExibidos = this.produtos.filter(
+      produto => produto.codGrupo == codDoGrupo      )
+  }
+
 
   listarDoGrupo(id:number){
 
