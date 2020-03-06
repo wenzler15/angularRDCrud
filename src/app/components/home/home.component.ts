@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   grupoAtivo: Grupo =null;
 
 listarGrupo(grupo:Grupo){
-  console.log(grupo);
+
   this.lista.listaDoGrupo(grupo.cod)
 }
 

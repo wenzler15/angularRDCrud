@@ -8,7 +8,7 @@ import { GruposComponent } from './components/grupos/grupos.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: "home",
     component: HomeComponent
   },
   {
@@ -20,8 +20,14 @@ const routes: Routes = [
     component: ContatosComponent
   },
   {
-    path: "grupos",
-    component: GruposComponent
+    path:"",
+    redirectTo:"/home",
+    pathMatch:"full"
+  },
+  {
+    path:"**",
+    redirectTo:"home",
+    pathMatch:"full"
   }
 ];
 
